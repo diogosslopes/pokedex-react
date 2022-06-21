@@ -1,38 +1,417 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: auto;
+  margin-top: 175px;
+  background-image: url(img/Pokedex1000.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container{
+
+  max-width: 1160px;
+  margin: auto;
+}
+
+nav{
+  /* margin-top: -50px; */
+  /* height: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  bottom: 175px;
+  right: 500px;
+
+}
+
+.searchbar-container{
+  display: flex;
+  /* margin: 0 auto; */
+  padding: 0 20px;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  bottom: 120px;
+  left: 250px;
+  z-index: 1;
+}
+
+.searchbar{
+  background-color: white;
+  margin-right: 20px;
   }
+
+.searchbar input{
+  padding: 10px;
+  box-shadow: 0px 2px 2px #0000002d;
+  border-radius: 3px;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.nextback-btn{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  top: 33px;
+  right: 89px;
+}
+.confirm-btn button{
+  background-color: rgb(0, 0, 0);
+  width: 70px;
+  height: 55px;
+  border-radius: 50px;
+  position: relative;
+  top: 38px;
+  right: 51px;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+}
+
+.clear-btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.clear-btn button{
+  background-color: rgb(0, 0, 0);
+  width: 51px;
+  height: 37px;
+  border-radius: 50px;
+  position: relative;
+  top: 40px;
+  left: 5px;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 35px;
+  right: 41px
+}
+
+.nextback-btn button{
+  background-color: #000000;
+  border: none;
+  border-radius: 10px;
+  height: 44px;
+  width: 55px;
+  color: white;
+  padding: 10px 12px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#title{
+  font-size: 2.5em;
+}
+
+.pokedex-header{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 10px;
+}
+
+.mainContainer{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: auto;
+  max-width: 993px;
+}
+
+.pokedex-grid h1{
+  font-size: 0.8em;
+}
+
+.pokedex-grid-water{
+  /* background-color: rgb(118, 135, 209); */
+  display: grid;
+  margin: auto;
+  max-width: 420px;
+  height: 202px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: scroll;
+  border-radius: 18px;
+  gap: 15px;
+  padding: 10px;
+  margin-bottom: 15px ;
+ 
+}
+
+.pokedex-grid{
+  display: grid;
+  margin: auto;
+  max-width: 420px;
+  height: 202px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: scroll;
+  border-radius: 18px;
+}
+
+
+.pokedex{
+  height: 410px;
   display: flex;
   flex-direction: column;
+  width: 410px;
+  position: relative;
+  bottom: 170px;
+  right: 45px;
+}
+
+.pokedex-water{
+  position: absolute;
+  max-width: 413px;
+  height: 216px;
+  top: 66px;
+}
+.pokedex-fire{
+  position: absolute;
+  max-width: 413px;
+  height: 216px;
+  top: 66px;
+}
+.pokedex-grass{
+  position: absolute;
+  max-width: 413px;
+  height: 216px;
+  top: 66px;
+}
+
+
+
+
+.pokedex-grid::-webkit-scrollbar{
+  width: 1px;
+}
+.pokedex-grid-water::-webkit-scrollbar{
+  width: 1px;
+}
+
+#pokemonsFavorites::-webkit-scrollbar{
+  width: 1px;
+}
+
+.grass{
+  /* background-color: rgb(96, 211, 96); */
+  padding: 10px;
+  margin-bottom: 15px ;
+  position: relative;
+  
+}
+.fire{
+  /* background-color: rgb(241, 25, 25); */
+  padding: 10px;
+  margin-bottom: 15px ;
+  position: relative;
+  /* bottom: 445px; */
+}
+.water{
+  /* background-color: rgb(241, 25, 25); */
+  padding: 10px;
+  margin-bottom: 15px ;
+  position: relative;
+  /* bottom: 445px; */
+}
+.cardgrass{
+  background-color: rgb(96, 211, 96);
+}
+.cardfire{
+  background-color: rgb(241, 25, 25);
+}
+.cardwater{
+  background-color: rgb(118, 135, 209);
+  padding: 10px;
+  margin-bottom: 15px ;
+  position: relative;
+  /* bottom: 890px; */
+}
+.cards{
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.containerCardsInfo{
+  width: 420px;
+  height: 85px;
+}
+
+/* .cardsInfo{
+  position: absolute;
+} */
+
+.card{
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 210px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px;
+  
+}
+.cardFavorites{
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 124px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px;
+  
+}
+.main-card{
+  display: flex;
+  align-items: flex-start;
+  width: 140px;
+  height: 50px;
+  /* height: 85px; */
+  
+}
+.cardInfo{
+  position: absolute;
+  /* background-color: #FBFB05; */
+  top: 450px;
+  left: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 185px;
+  height: 85px;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: .3;
+  transition: ease-in .4s;
+}
+
+
+.show{
+  top: 435px;
+  left: 50px;
+  visibility: visible;
+  opacity: 1;
+  transition: ease-in .4s;
+}
+
+.hide-pokedex{
+  visibility: hidden;
+}
+
+.pokemonsFavorites{
+display: flex;
+flex-direction: column;
+position: relative;
+max-width: 410px;
+bottom: 150px;
+left: 40px;
+
+}
+#pokemonsFavorites{
+  background-color: #2BC705;
+  display: grid;
+  padding: 14px;
+  gap: 10px;
+  width: 415px;
+  height: 225px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: scroll;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+}
+
+h4{
+  font-size: 9pt;
+}
+
+.cardInfoAbilities{
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardInfoAbilities h4{
+  margin-bottom: 5px;
+
+}
+
+
+.card:hover{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.452);
+	transition: all .3s ease-out;
+  cursor: pointer;
+}
+
+.card h4, .cardInfo h4, .cardInfo small{
+  text-transform: capitalize;
+}
+
+.main-card img{
+  position: relative;
+  top: 2px;
+  right: 25px;
+  cursor: pointer;
+  width: 15%;
+}
+.cardFavorites img{
+  position: relative;
+  bottom: 15px;
+  cursor: pointer;
+}
+.card .pokemonImage{
+  position: static;
+  width: 43%;
+  margin-left: -7px;
+}
+
+.cardGrassFavorite{
+  background-color: rgba(26, 122, 26, 0.712);
+  transition: all .3s ease-out;
+}
+.cardFireFavorite{
+  background-color: rgb(199, 23, 23);
+  transition: all .3s ease-out;
+}
+.cardWaterFavorite{
+  background-color: rgb(82, 96, 158);
+  transition: all .3s ease-out;
+}
+
+button:hover{
+  opacity: .2;
+}
+
+.searchbar-btn button{
+  background-color: #0e6f9f;
+  border: none;
+  border-radius: 10px;
+  height: 44px;
   color: white;
+  padding: 10px 12px;
+  cursor: pointer;
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  text-align: center;
 }
