@@ -57,29 +57,52 @@ nav{
 .nextback-btn{
   display: flex;
   gap: 8px;
-  justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
-  top: 33px;
-  right: 89px;
+  top: 25px;
+  right: 66px;
 }
+
+.nextback-btn label{
+  color: white;
+}
+
 .confirm-btn button{
   background-color: rgb(0, 0, 0);
   width: 70px;
   height: 55px;
   border-radius: 50px;
   position: relative;
-  top: 38px;
-  right: 51px;
   cursor: pointer;
   border: none;
   opacity: 0;
 }
 
+.confirm-btn label{
+  color: white;
+}
+
+.confirm-btn{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 38px;
+  right: 28px;
+}
+
 .clear-btn{
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 50px;
+  top: 40px;
+  left: 363px;
+}
+
+.clear-btn label{
+  color: white;
 }
 
 .clear-btn button{
@@ -87,9 +110,6 @@ nav{
   width: 51px;
   height: 37px;
   border-radius: 50px;
-  position: relative;
-  top: 40px;
-  left: 5px;
   cursor: pointer;
   border: none;
   opacity: 0;
@@ -410,6 +430,12 @@ button:hover{
   padding: 10px 12px;
   cursor: pointer;
   opacity: 1;
+}
+
+.back-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 

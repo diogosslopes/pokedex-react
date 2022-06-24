@@ -11,6 +11,7 @@ const Confirmbtn = (props) => {
     return (
         <div className="confirm-btn">
             <button onClick={showFavorites} ></button>
+            <label>Confirm</label>
         </div>
     )
 }

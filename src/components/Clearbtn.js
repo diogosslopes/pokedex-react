@@ -16,6 +16,7 @@ const Clearbtn = (props) => {
     return (
         <div className="clear-btn">
             <button onClick={clearFavorites} ></button>
+            <label>Clear</label>
         </div>
     )
 }

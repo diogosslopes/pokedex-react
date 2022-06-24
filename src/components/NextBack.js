@@ -36,8 +36,12 @@ const NextBack = (props) =>{
 
     return (
         <div className="nextback-btn">
-            <button onClick={back} ></button>
-            <button onClick={next} ></button>
+            
+                <label>Back</label>
+                <button onClick={back} ></button>
+                <button onClick={next} ></button>
+                <label>Next</label>
+            
         </div>
     )
 }
