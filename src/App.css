@@ -272,7 +272,7 @@ nav{
   margin-bottom: 15px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   max-width: 124px;
   height: 50px;
   border-radius: 10px;
@@ -373,9 +373,10 @@ h4{
   width: 15%;
 }
 .cardFavorites img{
-  position: relative;
-  bottom: 15px;
+  bottom: 34px;
+  left: 105px;
   cursor: pointer;
+  position: absolute;
 }
 .card .pokemonImage{
   position: static;
