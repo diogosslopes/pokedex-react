@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import FavoriteContext from "../contexts/favoritesContext";
 
 const Card = (props) => {
@@ -20,7 +20,7 @@ const Card = (props) => {
     }
 
 
-    const selectGrassFav = async () => {
+    const selectGrassFav =  useCallback(() => {
         console.log(pokemon)
         let cardSelected = document.querySelector(`.${fav}`)
         console.log(cardSelected)
@@ -63,7 +63,7 @@ const Card = (props) => {
                 }
             }
         }
-    }
+    },[favoritePokemons, updateFavoritePokemons])
 
     return (
         <div className="main-card">

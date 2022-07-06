@@ -80,7 +80,7 @@ const Pokedex = (props) => {
                             </div>
                             <div className="buttons">
                                 <Confirmbtn />
-                                <NextBack type={"water"}  />
+                                <NextBack type={"water"} idbtn={"waterNextBtn"} idlabel={'waterNextLabel'} />
                             </div>
                         </div>
                         {pokemons.map((pokemon, index) => {

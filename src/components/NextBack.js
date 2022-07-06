@@ -8,6 +8,8 @@ const NextBack = (props) =>{
     const element = document.querySelector('.pokedex')
     const favoriteElement = document.querySelector('#pokemonsFavorites')
     const heart = document.querySelector('#heart')
+    const waterNextBtn = document.querySelector('#btnWater')
+    const waterNextLabel = document.querySelector('#labelWater')
 
     const next = () => {
         if(type === "grass"){
@@ -16,6 +18,8 @@ const NextBack = (props) =>{
         }else if(type === "fire"){
             fireElement.classList.add('hide-pokedex')
             waterElement.classList.remove('hide-pokedex')
+            waterNextBtn.classList.add('hide-pokedex')
+            waterNextLabel.classList.add('hide-pokedex')
         }else if(type === "water"){
             waterElement.classList.add('hide-pokedex')
             element.classList.remove('hide-pokedex')

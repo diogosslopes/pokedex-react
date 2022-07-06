@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { getPkemons, getPkemon, filterPokemons, searchPokemon } from './api';
 import './App.css';
 import Pokedex from './components/Pokedex';
@@ -12,7 +12,7 @@ function App() {
   const [pokemons, setPokemons] = useState([])
   const [favorites, setFavorites] = useState([])
 
-  const fetchPokemons = async () => {
+  const fetchPokemons = useCallback(async () => {
     try {
       setLoading(true)
       const data = await getPkemons()
@@ -26,7 +26,7 @@ function App() {
     } catch (error) {
       console.log("Fetch Error" + error)
     }
-  }
+  },[loading, pokemons])
 
 
   useEffect(() => {
@@ -34,23 +34,23 @@ function App() {
     fetchPokemons();
   }, [])
 
-  const onSearchHandler = async (pokemon) => {
+  const onSearchHandler = useCallback(async (pokemon) => {
     if (!pokemon) {
       return fetchPokemons()
     }
 
     setLoading(true)
     const result = await searchPokemon(pokemon)
-    if(!result){
+    if (!result) {
       setLoading(false)
-    }else{
+    } else {
       setPokemons([result])
     }
     setLoading(false)
-    
-  }
 
-  const updateFavoritePokemons = (name) => {
+  }, [pokemons, loading])
+
+  const updateFavoritePokemons = useCallback((name) => {
     const updatedFavorites = [...favorites]
     console.log(name)
     if (name === "clear") {
@@ -62,7 +62,7 @@ function App() {
       updatedFavorites.push(name)
     }
     setFavorites(updatedFavorites)
-  }
+  },[favorites])
 
   // const updateGrassFavorites = (name) => {
   //   const updatedGrassFavorites = [...grassFavorites]

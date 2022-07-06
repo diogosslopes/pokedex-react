@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar(){
+function Header(){
     return(
     <nav>
         <div>
@@ -10,4 +10,4 @@ function Navbar(){
     )
 }
 
-export default Navbar
+export default Header
