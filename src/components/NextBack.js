@@ -1,6 +1,7 @@
 import React from "react";
 
 const NextBack = (props) =>{
+    const loading = props.loading
     const {type} = props
     const grassElement = document.querySelector('.pokedex-grass')
     const fireElement = document.querySelector('.pokedex-fire')
@@ -37,17 +38,20 @@ const NextBack = (props) =>{
             fireElement.classList.remove('hide-pokedex')
         }
     }
-
-    return (
-        <div className="nextback-btn">
-            
-                <label>Back</label>
-                <button onClick={back} ></button>
-                <button onClick={next} ></button>
-                <label>Next</label>
-            
-        </div>
-    )
+    if(loading == true){
+        <div></div>
+    }else{
+        return (
+            <div className="nextback-btn">
+                
+                    <label>Back</label>
+                    <button onClick={back} ></button>
+                    <button onClick={next} ></button>
+                    <label>Next</label>
+                
+            </div>
+        )
+    }
 }
 
 export default NextBack

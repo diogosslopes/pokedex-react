@@ -4,8 +4,9 @@ import CardFavorites from "./CardFavorites";
 import CardInfo from "./CardInfo";
 import Clearbtn from "./Clearbtn";
 
-const Favorites = () => {
+const Favorites = (props) => {
 
+    const loading = props.loading
     const { favoritePokemons } = useContext(FavoriteContext)
     
     return (
@@ -25,7 +26,7 @@ const Favorites = () => {
                     )
                 })}
             </div>
-            <Clearbtn />
+            <Clearbtn loading={loading} />
         </div>
     )
 }

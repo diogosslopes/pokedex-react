@@ -47,8 +47,8 @@ const Pokedex = (props) => {
                                 })}
                             </div>
                             <div className="buttons">
-                                <Confirmbtn />
-                                <NextBack type={"grass"}  />
+                                <Confirmbtn loading={loading} />
+                                <NextBack type={"grass"} loading={loading}  />
                             </div>
                         </div>
                         <div className="pokedex-fire hide-pokedex">
@@ -63,8 +63,8 @@ const Pokedex = (props) => {
                                 })}
                             </div>
                             <div className="buttons">
-                                <Confirmbtn />
-                                <NextBack type={"fire"}  />
+                                <Confirmbtn loading={loading} />
+                                <NextBack type={"fire"} loading={loading}  />
                             </div>
                         </div>
                         <div className="pokedex-water hide-pokedex">
@@ -79,8 +79,8 @@ const Pokedex = (props) => {
                                 })}
                             </div>
                             <div className="buttons">
-                                <Confirmbtn />
-                                <NextBack type={"water"} idbtn={"waterNextBtn"} idlabel={'waterNextLabel'} />
+                                <Confirmbtn loading={loading} />
+                                <NextBack type={"water"} idbtn={"waterNextBtn"} idlabel={'waterNextLabel'} loading={loading} />
                             </div>
                         </div>
                         {pokemons.map((pokemon, index) => {
@@ -96,7 +96,7 @@ const Pokedex = (props) => {
                     </div>
                 )
             }
-            <Favorites />
+            <Favorites loading={loading}/>
         </div>
     )
 }
